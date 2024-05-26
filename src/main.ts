@@ -6,7 +6,7 @@ import cityController from "./controllers/cityController";
 dotenv.config();
 
 const app = express();
-const env = cleanEnv(process.env, envValidation);
+export const env = cleanEnv(process.env, envValidation);
 const port = env.PORT|| 3000;
 app.get('/cities', cityController.getCities);
 app.get('/', (req: Request, res: Response) => {
