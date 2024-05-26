@@ -1,7 +1,8 @@
 import express, { Request, Response } from 'express';
 import {cleanEnv} from "envalid";
 import {envValidation} from "../env.validation";
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const env = cleanEnv(process.env, envValidation);
