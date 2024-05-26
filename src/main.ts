@@ -1,8 +1,11 @@
 import express, { Request, Response } from 'express';
+import {cleanEnv} from "envalid";
+import {envValidation} from "../env.validation";
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const env = cleanEnv(process.env, envValidation);
+const port = env.PORT|| 3000;
 
 app.get('/', (req: Request, res: Response) => {
     res.send('HEALTH CHECK');
