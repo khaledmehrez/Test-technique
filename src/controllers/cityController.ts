@@ -1,7 +1,7 @@
 import CityService from "../services/cityService";
 import CityValidator from "../Validators/cityValidator";
 import {getCitiesRequestType, GetCityType, ResponseObjectType} from "../types/types"
-import { Request, Response } from 'express';
+import { Response } from 'express';
 
 class CityController {
     static async getCities(req:getCitiesRequestType, res:Response):Promise<Response<ResponseObjectType<GetCityType>>> {
